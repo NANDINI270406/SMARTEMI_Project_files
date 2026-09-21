@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const API_BASE_URL = 'http://localhost:5000'
+const API_BASE_URL = '/api'
 
 function formatCurrency(value) {
   return new Intl.NumberFormat('en-IN', {
