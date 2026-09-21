@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const API_BASE_URL = '/api'
@@ -15,7 +15,7 @@ function formatCurrency(value) {
 
 function formatDate(value) {
   if (!value) {
-    return '—'
+    return 'â€”'
   }
 
   const date = new Date(value)
@@ -258,7 +258,7 @@ function LoanCard({ loan }) {
           <div className="min-w-0">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-lg font-bold text-white">
-                ₹
+                â‚¹
               </div>
 
               <div className="min-w-0">
@@ -267,7 +267,7 @@ function LoanCard({ loan }) {
                 </h3>
 
                 <p className="mt-0.5 text-xs text-slate-500">
-                  Loan ID: #{loan?.id ?? '—'}
+                  Loan ID: #{loan?.id ?? 'â€”'}
                 </p>
               </div>
             </div>
@@ -318,7 +318,7 @@ function LoanCard({ loan }) {
             <p className="mt-1 text-sm font-bold text-slate-900">
               {interestRate
                 ? `${interestRate}%`
-                : '—'}
+                : 'â€”'}
             </p>
           </div>
         </div>
@@ -355,7 +355,7 @@ function LoanCard({ loan }) {
             <p className="mt-1 text-sm font-semibold text-slate-800">
               {tenure
                 ? `${tenure} months`
-                : '—'}
+                : 'â€”'}
             </p>
           </div>
 
@@ -391,7 +391,7 @@ function LoanCard({ loan }) {
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             View Loan Details
-            <span>→</span>
+            <span>â†’</span>
           </Link>
         </div>
       </div>
@@ -415,7 +415,7 @@ export default function MyLoans() {
       setError('')
 
       const response = await fetch(
-        `${API_BASE_URL}/api/loans`,
+        `${API_BASE_URL}/loans`,
         {
           method: 'GET',
           credentials: 'include',
@@ -669,7 +669,7 @@ export default function MyLoans() {
                 summary.totalLoans
               }
               subtitle={`${summary.activeLoans} active`}
-              icon="▣"
+              icon="â–£"
             />
 
             <SummaryCard
@@ -678,7 +678,7 @@ export default function MyLoans() {
                 summary.totalMonthlyEMI
               )}
               subtitle="Across active loans"
-              icon="₹"
+              icon="â‚¹"
             />
 
             <SummaryCard
@@ -687,7 +687,7 @@ export default function MyLoans() {
                 summary.totalOutstanding
               )}
               subtitle="Remaining principal"
-              icon="◷"
+              icon="â—·"
             />
 
             <SummaryCard
@@ -698,7 +698,7 @@ export default function MyLoans() {
               subtitle={formatCurrency(
                 summary.totalPrincipal
               ) + ' total principal'}
-              icon="✓"
+              icon="âœ“"
             />
           </div>
         )}
@@ -709,7 +709,7 @@ export default function MyLoans() {
             {/* Search */}
             <div className="relative flex-1">
               <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                ⌕
+                âŒ•
               </span>
 
               <input
@@ -822,7 +822,7 @@ export default function MyLoans() {
           loans.length === 0 && (
             <div className="rounded-3xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center shadow-sm">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-2xl">
-                ₹
+                â‚¹
               </div>
 
               <h2 className="mt-5 text-xl font-bold text-slate-900">
@@ -851,7 +851,7 @@ export default function MyLoans() {
           filteredLoans.length === 0 && (
             <div className="rounded-3xl border border-slate-200 bg-white px-6 py-14 text-center shadow-sm">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-xl">
-                ⌕
+                âŒ•
               </div>
 
               <h2 className="mt-4 text-lg font-bold text-slate-900">
@@ -910,3 +910,4 @@ export default function MyLoans() {
     </div>
   )
 }
+

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
 const API_BASE_URL = '/api'
 
@@ -101,7 +101,7 @@ function Prepayment() {
       setLoading(true)
 
       const response = await fetch(
-        `${API_BASE_URL}/api/prepayment/calculate`,
+        `${API_BASE_URL}/prepayment/calculate`,
         {
           method: 'POST',
           headers: {
@@ -175,7 +175,7 @@ function Prepayment() {
 
             <div className="flex w-fit items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-xs font-bold text-white">
-                ₹
+                â‚¹
               </div>
 
               <div>
@@ -227,7 +227,7 @@ function Prepayment() {
 
                   <div className="relative">
                     <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">
-                      ₹
+                      â‚¹
                     </span>
 
                     <input
@@ -318,7 +318,7 @@ function Prepayment() {
 
                   <div className="relative">
                     <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">
-                      ₹
+                      â‚¹
                     </span>
 
                     <input
@@ -445,7 +445,7 @@ function Prepayment() {
 
                 <div className="max-w-md">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-2xl">
-                    ₹
+                    â‚¹
                   </div>
 
                   <h2 className="mt-5 text-lg font-bold text-slate-900">
@@ -747,3 +747,4 @@ function Prepayment() {
 }
 
 export default Prepayment
+

@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api'
+﻿const API_BASE_URL = '/api'
 
 
 async function handleResponse(response) {
@@ -22,7 +22,7 @@ export async function getNotifications(
   unreadOnly = false
 ) {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications?unread_only=${unreadOnly}`,
+    `${API_BASE_URL}/notifications?unread_only=${unreadOnly}`,
     {
       method: 'GET',
       credentials: 'include',
@@ -38,7 +38,7 @@ export async function getNotifications(
  */
 export async function getUnreadNotificationCount() {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/unread-count`,
+    `${API_BASE_URL}/notifications/unread-count`,
     {
       method: 'GET',
       credentials: 'include',
@@ -56,7 +56,7 @@ export async function markNotificationAsRead(
   notificationId
 ) {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/${notificationId}/read`,
+    `${API_BASE_URL}/notifications/${notificationId}/read`,
     {
       method: 'PATCH',
       credentials: 'include',
@@ -72,7 +72,7 @@ export async function markNotificationAsRead(
  */
 export async function markAllNotificationsAsRead() {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/read-all`,
+    `${API_BASE_URL}/notifications/read-all`,
     {
       method: 'PATCH',
       credentials: 'include',
@@ -90,7 +90,7 @@ export async function deleteNotification(
   notificationId
 ) {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/${notificationId}`,
+    `${API_BASE_URL}/notifications/${notificationId}`,
     {
       method: 'DELETE',
       credentials: 'include',
@@ -108,7 +108,7 @@ export async function generateUpcomingNotifications(
   daysAhead = 7
 ) {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/generate-upcoming`,
+    `${API_BASE_URL}/notifications/generate-upcoming`,
     {
       method: 'POST',
       headers: {
@@ -130,7 +130,7 @@ export async function generateUpcomingNotifications(
  */
 export async function generateOverdueNotifications() {
   const response = await fetch(
-    `${API_BASE_URL}/api/notifications/generate-overdue`,
+    `${API_BASE_URL}/notifications/generate-overdue`,
     {
       method: 'POST',
       headers: {
@@ -142,3 +142,4 @@ export async function generateOverdueNotifications() {
 
   return handleResponse(response)
 }
+

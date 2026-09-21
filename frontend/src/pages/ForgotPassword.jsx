@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const API_BASE_URL = '/api'
@@ -26,7 +26,7 @@ function ForgotPassword() {
       setLoading(true)
 
       const response = await fetch(
-        `${API_BASE_URL}/api/auth/forgot-password`,
+        `${API_BASE_URL}/auth/forgot-password`,
         {
           method: 'POST',
           headers: {
@@ -72,7 +72,7 @@ function ForgotPassword() {
         <div className="mb-8 text-center">
 
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 text-3xl font-bold text-white shadow-xl">
-            ₹
+            â‚¹
           </div>
 
           <h1 className="mt-5 text-3xl font-extrabold text-slate-900">
@@ -157,7 +157,7 @@ function ForgotPassword() {
               }
               className="text-sm font-semibold text-blue-600 hover:text-blue-700"
             >
-              ← Back to Login
+              â† Back to Login
             </button>
 
           </div>
@@ -171,3 +171,4 @@ function ForgotPassword() {
 }
 
 export default ForgotPassword
+

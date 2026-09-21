@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
 const API_BASE_URL = '/api'
 
@@ -122,7 +122,7 @@ function LoanComparison() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/api/loan-comparison/compare`,
+        `${API_BASE_URL}/loan-comparison/compare`,
         {
           method: 'POST',
           headers: {
@@ -374,7 +374,7 @@ function LoanComparison() {
 
                       <div className="relative">
                         <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-slate-400">
-                          ₹
+                          â‚¹
                         </span>
 
                         <input
@@ -802,3 +802,4 @@ function LoanComparison() {
 }
 
 export default LoanComparison
+

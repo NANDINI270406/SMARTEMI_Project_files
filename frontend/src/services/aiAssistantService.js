@@ -1,8 +1,8 @@
-const API_BASE_URL = '/api'
+﻿const API_BASE_URL = '/api'
 
 export async function askAIAssistant(question) {
   const response = await fetch(
-    `${API_BASE_URL}/api/ai-assistant`,
+    `${API_BASE_URL}/ai-assistant`,
     {
       method: 'POST',
       headers: {
@@ -26,3 +26,4 @@ export async function askAIAssistant(question) {
 
   return data
 }
+

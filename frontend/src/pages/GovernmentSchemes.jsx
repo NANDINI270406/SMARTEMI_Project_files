@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 
 const API_BASE_URL = '/api'
 
@@ -39,8 +39,8 @@ function GovernmentSchemes() {
       }
 
       const url = searchQuery
-        ? `${API_BASE_URL}/api/government-schemes?query=${encodeURIComponent(searchQuery)}`
-        : `${API_BASE_URL}/api/government-schemes`
+        ? `${API_BASE_URL}/government-schemes?query=${encodeURIComponent(searchQuery)}`
+        : `${API_BASE_URL}/government-schemes`
 
       const response = await fetch(url, {
         method: 'GET',
@@ -167,7 +167,7 @@ function GovernmentSchemes() {
             >
               <div className="relative flex-1">
                 <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  🔍
+                  ðŸ”
                 </span>
 
                 <input
@@ -419,7 +419,7 @@ function GovernmentSchemes() {
                         >
                           View Source
                           <span>
-                            ↗
+                            â†—
                           </span>
                         </a>
                       )}
@@ -468,7 +468,7 @@ function GovernmentSchemes() {
             <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
 
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 text-2xl">
-                🔎
+                ðŸ”Ž
               </div>
 
               <h2 className="mt-5 text-lg font-bold text-slate-900">
@@ -502,3 +502,4 @@ function GovernmentSchemes() {
 }
 
 export default GovernmentSchemes
+
