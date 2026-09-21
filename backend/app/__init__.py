@@ -59,19 +59,12 @@ def create_app():
     # =========================
 
     app.register_blueprint(auth_bp)
-
     app.register_blueprint(emi_bp)
-
     app.register_blueprint(loan_bp)
-
     app.register_blueprint(payment_bp)
-
     app.register_blueprint(dashboard_bp)
-
     app.register_blueprint(reports_bp)
-
     app.register_blueprint(web_search_bp)
-
     app.register_blueprint(ai_assistant_bp)
 
     app.register_blueprint(
@@ -102,12 +95,19 @@ def create_app():
                     "http://localhost:5173",
                     "http://127.0.0.1:5173",
                     "http://localhost:5000",
-                    "http://localhost:5000",
+                    "https://smartemi-13qh.onrender.com",
                 ]
             }
         },
         supports_credentials=True,
     )
+
+    # =========================
+    # CREATE DATABASE TABLES
+    # =========================
+
+    with app.app_context():
+        db.create_all()
 
     # =========================
     # API HOME
@@ -161,9 +161,7 @@ def create_app():
     # REACT ROUTER SUPPORT
     # =========================
 
-    @app.route(
-        "/<path:path>"
-    )
+    @app.route("/<path:path>")
     def serve_react_routes(path):
 
         # Never treat API routes as React routes
@@ -186,16 +184,7 @@ def create_app():
                 path,
             )
 
-        # React Router routes such as:
-        # /dashboard
-        # /my-loans
-        # /reports
-        # /ai-assistant
-        # /government-schemes
-        # /prepayment
-        # /loan-comparison
-        # /notifications
-
+        # React Router routes
         return send_from_directory(
             frontend_dist,
             "index.html",
